@@ -1,6 +1,5 @@
 # rock-paper-scissors
-live: 
-
+live: https://beauhelmi.github.io/rock-paper-scissors/
 
 Batu Kertas Gunting adalah permainan bermain melawan komputer.
 
