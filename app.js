@@ -119,9 +119,9 @@ buttons.forEach((button) => {
       declareWinner();
     }
   });
-});
+}); 
 
-const myArray = ["Rock", "Paper", "Scissors"];
+const myArray = ["Batu", "Kertas", "Gunting"];
 
 function computerPlay() {
   return myArray[~~(Math.random() * myArray.length)];
@@ -131,68 +131,68 @@ function playRound(playerSelection, computerSelection) {
   computerSelection = computerPlay().toLowerCase();
   playerSelection = playerSelection.toLowerCase();
   if (computerSelection == playerSelection) {
-    displayResults("Tie game!");
+    displayResults("Seri!");
   } else if (
-    (computerSelection == "rock" && playerSelection == "scissors") ||
-    (computerSelection == "scissors" && playerSelection == "paper") ||
-    (computerSelection == "paper" && playerSelection == "rock")
+    (computerSelection == "batu" && playerSelection == "gunting") ||
+    (computerSelection == "gunting" && playerSelection == "kertas") ||
+    (computerSelection == "kertas" && playerSelection == "batu")
   ) {
     computerScore = ++computerScore;
     keepCpuScore();
     if (computerScore === 1) {
       displayResults(
-        `Oh no! You lost.
-        ${capitalize(computerSelection)} beats ${playerSelection}.`
+        `Oh tidak..Anda kalah.
+        ${capitalize(computerSelection)} kalahkan ${playerSelection}.`
       );
     } else if (computerScore === 2) {
       displayResults(
         `Arghh. ${capitalize(
           computerSelection
-        )} beats ${playerSelection}. Give it another shot!`
+        )} kalahkan ${playerSelection}. Cuba sekali lagi!`
       );
     } else if (computerScore === 3) {
       displayResults(
         `${capitalize(
           computerSelection
-        )} beats ${playerSelection}. It's ok. You got this!!`
+        )} kalahkan ${playerSelection}. Yakin pada diri. Anda mampu buat!!`
       );
     } else if (computerScore === 4) {
       displayResults(
-        `Oh no. It's match point!! ${capitalize(
+        `Alamak.. satu point sahaja lagi!! ${capitalize(
           computerSelection
-        )} beats ${playerSelection}. Don't let us down!`
+        )} kalahkan ${playerSelection}. Jangan hampakan kami!`
       );
     } else {
-      displayResults(`${computerSelection} beats ${playerSelection}`);
+      displayResults(`${computerSelection} kalahkan ${playerSelection}`);
     }
   } else {
     playerScore = ++playerScore;
     keepPlayerScore();
     if (playerScore === 1) {
       displayResults(
-        `Lets go!!! You won.
-        ${capitalize(playerSelection)} beats ${computerSelection}.`
+        `Ya anda menang!.
+        ${capitalize(playerSelection)} kalahkan ${computerSelection}.`
       );
     } else if (playerScore === 2) {
       displayResults(
-        `You're pretty good at this. ${capitalize(
+        `Anda nampak pandai bermain game ini. ${capitalize(
           playerSelection
-        )} beats ${computerSelection}.`
+        )} kalahkan ${computerSelection}.`
       );
     } else if (playerScore === 3) {
       displayResults(
         `${capitalize(
           playerSelection
-        )} beats ${computerSelection}! Has mankind found its savior??`
+        )} kalahkan ${computerSelection}! Adakah anda penyelamat manusia??`
       );
     } else if (playerScore === 4) {
       displayResults(
         `${capitalize(
           playerSelection
-        )} beats ${computerSelection}. One more and you're a hero!`
+        )} kalahkan ${computerSelection}. Satu sahaja lagi dan anda akan menjadi Penyelamat Manusia!`
       );
     } else {
-      displayResults(`${playerSelection} beats ${computerSelection}`);
+      displayResults(`${playerSelection} kalahkan ${computerSelection}`);
     }
   }
 }
@@ -215,11 +215,11 @@ function displayResults(str) {
 function declareWinner() {
   rplContent();
   if (playerScore > computerScore) {
-    endDesc.textContent = "You win! Mankind lives another day!!";
-    returnMainBtn.innerText = "Play Again";
+    endDesc.textContent = "Tahniah! Anda berjaya mempertahankan kemanusiaan!!";
+    returnMainBtn.innerText = "Bermain semula?";
   } else {
-    endDesc.textContent = "You lost...who will save mankind now?";
-    returnMainBtn.innerText = "Try Again?";
+    endDesc.textContent = "Anda kalah..Manusia akan pupus sekarang?";
+    returnMainBtn.innerText = "Bermain semula?";
   }
   fadeIn();
 
@@ -228,13 +228,13 @@ function declareWinner() {
 
   endDescSpan[endDescSpan.length - 1].ontransitionend = () => {
     returnMainBtn.classList.add("fade-in");
-    /*returnMainBtn.animate([{ opacity: 0 }, { opacity: 1 }], {
-      duration: 00,
-      fill: "forwards",
-      iterations: 1,
-      delay: 0,
-      easing: "ease-in",
-    });*/
+    // returnMainBtn.animate([{ opacity: 0 }, { opacity: 1 }], {
+    //   duration: 00,
+    //   fill: "forwards",
+    //   iterations: 1,
+    //   delay: 0,
+    //   easing: "ease-in",
+    // });
   };
 }
 

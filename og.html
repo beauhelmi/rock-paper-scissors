@@ -7,9 +7,9 @@
 <body>
   <script>
       const myArray = [
-          'Rock',
-          'Paper',
-          'Scissors'
+          'Batu',
+          'Kertas',
+          'Gunting'
       ];
       
       function computerPlay() {
@@ -33,26 +33,26 @@
         
         function declareWinner() {
           if (playerScore===computerScore) {
-            alert(playerScore + '-' + computerScore + '\nTie game!');
-            return playerScore + '-' + computerScore + '\nTie game!';
+            alert(playerScore + '-' + computerScore + '\nSeri!');
+            return playerScore + '-' + computerScore + '\nSeri!';
           } else if (playerScore>computerScore) {
-            alert(playerScore + '-' + computerScore + '\nYou win!!');
-            return playerScore + '-' + computerScore + '\nYou win!!';
+            alert(playerScore + '-' + computerScore + '\nTahniah! Anda berjaya mempertahankan kemanusiaan!!');
+            return playerScore + '-' + computerScore + '\nTahniah! Anda berjaya mempertahankan kemanusiaan!!';
           } else {
-            alert(playerScore + '-' + computerScore + '\nYou lost. Better luck next time!');
-            return playerScore + '-' + computerScore + '\nYou lost. Better luck next time!';
+            alert(playerScore + '-' + computerScore + '\nAnda kalah..Manusia akan pupus sekarang!');
+            return playerScore + '-' + computerScore + '\nAnda kalah..Manusia akan pupus sekarang!';
           }
         }
       }
       
       function onUserInput() {
-        playerSelection = prompt('Rock, Paper, or Scissors?', '');
-          if ((playerSelection.toLowerCase()=='rock')
-              ||(playerSelection.toLowerCase()=='paper')
-              ||(playerSelection.toLowerCase()=='scissors')) {
+        playerSelection = prompt('Batu, Kertas, atau Gunting?', '');
+          if ((playerSelection.toLowerCase()=='batu')
+              ||(playerSelection.toLowerCase()=='kertas')
+              ||(playerSelection.toLowerCase()=='gunting')) {
             console.log(playRound(playerSelection,computerSelection));
           } else {
-          alert('That\'s not a valid choice.');
+          alert('Itu pilihan yang salah!.');
           onUserInput();
         }
       }
@@ -61,19 +61,19 @@
           computerSelection = computerPlay().toLowerCase();
           playerSelection = playerSelection.toLowerCase();
           if (computerSelection==playerSelection) {
-              alert('Tie game!');
-              return 'Tie game\nComputer Score: ' + 
-                      computerScore + '\nYour Score: ' + playerScore;
-          } else if ((computerSelection=='rock' && playerSelection=='scissors') 
-                    || (computerSelection=='scissors' && playerSelection=='paper') 
-                    || (computerSelection=='paper' && playerSelection=='rock')) {
-              alert('You lose! ' + computerSelection + ' beats ' + playerSelection);
-              return 'Computer Score: ' + ++computerScore + 
-                      '\nYour Score: ' + playerScore;
+              alert('Seri!');
+              return 'Seri\nSkor Mesin: ' + 
+                      computerScore + '\nSkor Anda: ' + playerScore;
+          } else if ((computerSelection=='batu' && playerSelection=='gunting') 
+                    || (computerSelection=='gunting' && playerSelection=='kertas') 
+                    || (computerSelection=='kertas' && playerSelection=='batu')) {
+              alert('Anda tewas! ' + computerSelection + ' kalahkan ' + playerSelection);
+              return 'Skor Mesin: ' + ++computerScore + 
+                      '\nSkor Anda: ' + playerScore;
           } else {
-              alert('You win! ' + playerSelection + ' beats ' + computerSelection);
-              return 'Your Score: ' + ++playerScore + 
-                      '\nComputer Score: ' + computerScore;
+              alert('Anda menang! ' + playerSelection + ' kalahkan ' + computerSelection);
+              return 'Skor Anda: ' + ++playerScore + 
+                      '\nSkor Mesin: ' + computerScore;
           }
       }
   </script>
